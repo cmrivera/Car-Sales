@@ -1,5 +1,13 @@
 import { createStore } from "redux";
+import { updateTotalReducer } from "./Reducers/totalUpdate";
+import { addRemoveFeature } from "./Reducers/featuresReducer";
+import { combineReducers } from "redux";
 
+const allReducers = combineReducers({
+  updateTotal: updateTotalReducer,
+  updateFeatures: addRemoveFeature,
+  updateTotalPrice: updateTotalReducer,
+});
 //let store = createStore(reducer)
 
 //store -> globalized state
@@ -36,4 +44,13 @@ const remove = (state = 0, action) => {
       return state - 1;
   }
 };
+
+let store = createStore(add);
+
+//display to the console
+store.subscribe(() => console.log(store.getState()));
+
 //dispatch (execute action)
+store.dispatch(addFeature());
+store.dispatch(removeFeature());
+store.dispatch(totalUpdate());
