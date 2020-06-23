@@ -4,10 +4,11 @@ import Header from "./components/Header";
 import AddedFeatures from "./components/AddedFeatures";
 import AdditionalFeatures from "./components/AdditionalFeatures";
 import Total from "./components/Total";
-import { createStore, combineReducers } from "redux";
+//import { connect } from "react-redux";
+//import { addFeatures, removeFeatures } from "./Actions/actions";
 
-const store = createStore;
-const App = () => {
+const App = (props) => {
+  /*this next part moved to reducers, ot needed here, commented out
   const state = {
     additionalPrice: 0,
     car: {
@@ -25,18 +26,37 @@ const App = () => {
     ],
   };
 
+  const removeFeature = (item) => {
+    //dispatch an action to remove an item
+    props.Remove_Features(item);
+  };
+
+   const buyItem = (item) => {
+    console.log("item", item);
+    props.Add_Features(item);
+  };*/
+
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={state.car} />
-        <AddedFeatures car={state.car} />
+        <Header />
+        <AddedFeatures />
       </div>
       <div className="box">
-        <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} />
+        <AdditionalFeatures />
+        <Total />
       </div>
     </div>
   );
 };
 
+/*const mapStateToProps = (state) => {
+  return {
+    additionalPrice: state.additionalPrice,
+    car: state.car,
+    additionalFeatures: state.additionalFeatures,
+  };
+};*/
+
 export default App;
+//connect(mapStateToProps, { Add_Features, Remove_Features })(App);
