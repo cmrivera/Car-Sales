@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { reducer } from "./Reducers/featuresreducers";
+import { reducer } from "./Reducers/featuresReducer";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import "bulma/css/bulma.css";
