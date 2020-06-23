@@ -1,4 +1,4 @@
-export const inistialState = {
+export const initialState = {
   additionalPrice: 0,
   car: {
     price: 26395,
@@ -15,7 +15,7 @@ export const inistialState = {
   ],
 };
 
-export const reducer = (state = inistialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_FEATURES":
       //console.log("action.payload from Add_Features", action.payload);
@@ -39,6 +39,7 @@ export const reducer = (state = inistialState, action) => {
         car: {
           ...state.car,
           price: state.car.price - action.payload.price,
+
           features: [
             ...state.car.features.filter(
               (item) => item.id !== action.payload.id
