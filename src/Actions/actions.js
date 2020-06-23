@@ -7,6 +7,9 @@ export const Add_Features = (item) => {
   // the returned object is an action
   return { type: "ADD_FEATURES", payload: item };
 };
+export const Remove_Features = (item) => {
+  return { type: "Remove_Features", payload: item };
+};
 
 //   export const updateTitle = newTitle => {
 //     return { type: 'UPDATE_TITLE', payload: newTitle };
